@@ -1,15 +1,29 @@
 def ReadJson(jsonObject):
     import json
-    "convert json object to a dict"
-    y = json.loads(jsonObject)
-    print(jsonObject)
-    print(type(jsonObject))
-
-    "print the difference between str json and python dict"
+    #Definir niveles de cantidad de goles mínimos
+    niveles = {"A":5,"B":10,"C":15,"Cuauh":20}
+    print(niveles)
     print("\n")
-    print(y)
-    print(type(y))
-    print(len(y["jugadores"]))
+
+    #Convetir un objecto json en un diccionario de python
+    y = json.loads(jsonObject)
+    
+    #Imprimir el tipo de la clave jugadores
+    #print(y)
+    print(y["jugadores"])
+    print(type(y["jugadores"]))
+    print("\n")
+
+    #Definir la variable de la cantidad de jugadores
+    numberOfPlayers = len(y["jugadores"])
+    #Imprimir los nombres de cada jugador
+    for i in range(numberOfPlayers):
+        print(y["jugadores"][i]["nombre"])
+    print("\n")
+
+    print(y["jugadores"][0])
+    print(type(y["jugadores"][0]))
+
 
 x = """{
    "jugadores" : [  
@@ -53,4 +67,5 @@ x = """{
       }
    ]
 }"""
+
 ReadJson(x)
